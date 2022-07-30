@@ -15,7 +15,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
-import javax.inject.Inject;
+//import javax.inject.Inject;
 
 /**
  * @desc: 自动注入
@@ -32,7 +32,7 @@ public class AutoInjectApi implements InitializingBean {
     /**
      * JSR-330规范 引入的注解 (javax.inject)
      */
-    @Inject
+//    @Inject
     private LoadService loadService;
 
     @CustomAutowired

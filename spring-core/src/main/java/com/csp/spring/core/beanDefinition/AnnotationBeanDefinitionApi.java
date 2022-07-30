@@ -29,7 +29,7 @@ public class AnnotationBeanDefinitionApi {
 
         applicationContext.refresh();
 
-        Map<String, Config> configBeans = applicationContext.getBeansOfType(Config.class);
+        Map<String, BeanConfig> configBeans = applicationContext.getBeansOfType(BeanConfig.class);
         configBeans.forEach((k, v) -> System.out.println(k + ":" + v.user()));
 
         Map<String, User> userBeans = applicationContext.getBeansOfType(User.class);
@@ -54,7 +54,7 @@ public class AnnotationBeanDefinitionApi {
     }
 
     //    @Configuration
-    static class Config {
+    static class BeanConfig {
 
         @Bean
         public User user() {

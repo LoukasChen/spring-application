@@ -21,13 +21,15 @@ public class LoadController {
     private ApplicationContext applicationContext;
 
     @Autowired
-    private ObjectProvider<LoadService> loadServiceObjectProvider;
+//    private ObjectProvider<LoadService> loadServiceObjectProvider;
+    private LoadService loadService;
 
     @GetMapping("load")
     public String load(String request) {
         try {
 //        LoadService bean = applicationContext.getBean(LoadService.class);
-            LoadService loadService = loadServiceObjectProvider.getIfAvailable();
+//            LoadService loadService = loadServiceObjectProvider.getIfAvailable();
+            return loadService.load("req");
         } catch (Exception e) {
             log.error("lazy load service");
         }

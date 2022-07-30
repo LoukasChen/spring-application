@@ -1,6 +1,6 @@
 package com.csp.spring.core.beanFactory;
 
-import com.csp.spring.core.entity.User;
+import com.csp.spring.core.config.AutoConfig;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
@@ -8,8 +8,6 @@ import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.annotation.AnnotationConfigUtils;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import java.util.Arrays;
 
@@ -31,7 +29,7 @@ public class RegisterBeanFactory {
     public static void main(String[] args) {
         DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
 
-        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition(Config.class)
+        AbstractBeanDefinition beanDefinition = BeanDefinitionBuilder.genericBeanDefinition(AutoConfig.class)
                 .setScope(ConfigurableBeanFactory.SCOPE_SINGLETON).getBeanDefinition();
         beanFactory.registerBeanDefinition("config", beanDefinition);
 
@@ -48,16 +46,6 @@ public class RegisterBeanFactory {
         beanFactory.preInstantiateSingletons(); // 预先实例化单例对象，默认懒加载
 
         System.out.println(Arrays.toString(beanFactory.getBeanDefinitionNames()));
-    }
-
-    @Configuration
-     static class Config {
-
-        @Bean
-        public User user() {
-            return new User();
-        }
-
     }
 
 }

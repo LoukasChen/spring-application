@@ -33,7 +33,7 @@ public class ActivityFactory implements InitializingBean, ApplicationContextAwar
                 .values()
                 .forEach(activity -> {
                     activityContainers.put(activity.getActivityType(), activity);
-                    System.out.println(String.format("init activity handler %s", activity.getActivityType()));
+                    System.out.printf("init activity handler %s%n", activity.getActivityType());
                 });
     }
 

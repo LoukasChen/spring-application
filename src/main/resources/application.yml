@@ -30,8 +30,7 @@ server:
 #sharding.jdbc.config.sharding.tables.user.table-strategy.standard.precise-algorithm-class-name: com.csp.springtest.shardingjdbc.ShardingAlgorithm.MyShardingAlgorithm
 
 
-custom:
-  service:
-    load:
-      protocol: localhost
-      content: mystarter
+service:
+  load:
+    protocol: localhost
+    content: load-starter
