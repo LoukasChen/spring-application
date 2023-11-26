@@ -1,7 +1,7 @@
 package com.csp.app;
 
 import com.csp.app.event.MyPublishEvent;
-import com.csp.starter.annotation.EnableLoadAutoConfiguration;
+//import com.csp.starter.annotation.EnableLoadAutoConfiguration;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultSingletonBeanRegistry;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,7 +16,7 @@ import java.util.Map;
 
 @SpringBootApplication
 //@ImportResource("classpath:threadpool.xml")
-@EnableLoadAutoConfiguration
+//@EnableLoadAutoConfiguration
 public class SpringApplication {
 
     public static void main(String[] args) throws Exception {

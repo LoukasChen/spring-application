@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
+//import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -58,11 +58,11 @@ public class TestController {
         return testService.get(user);
     }
 
-    @RequestMapping(value = "/anon/proxy", method = RequestMethod.POST)
-    public ModelAndView dispatchPost(@Valid ProtocolRequest request) {
-        final String functionCode = request.getProtocol().getFunctionCode();
-        return null;
-    }
+//    @RequestMapping(value = "/anon/proxy", method = RequestMethod.POST)
+//    public ModelAndView dispatchPost(@Valid ProtocolRequest request) {
+//        final String functionCode = request.getProtocol().getFunctionCode();
+//        return null;
+//    }
 
     @GetMapping(value = "/result")
     @Transactional(rollbackFor = Throwable.class)
