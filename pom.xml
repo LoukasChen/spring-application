@@ -6,6 +6,7 @@
     <modules>
         <module>spring-core</module>
         <module>spring-app</module>
+        <module>webflux-client</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
